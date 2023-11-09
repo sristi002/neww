@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="faq1.css">
+
+    <link rel="stylesheet" href="style.css">
+
+   
+
+</head>
+<body>
+
+<div id="nav-container"></div>
+
+<div id="faq-image">
+    <h1 class="faq-heading">Frequently   Asked   Questions</h1>
+</div>
+
+<div class="filter-buttons">
+    <button class="filter-button" data-filter="animal-rescue">Animal Rescue</button>
+    <button class="filter-button" data-filter="animal-adoption">Animal Adoption</button>
+    <button class="filter-button" data-filter="volunteering">Volunteering</button>
+</div>
+
+
+<div class="container">
+
+    <div class="accordion-container">
+        <div class="accordion active" data-category="animal-rescue">
+            <div class="accordion-heading">
+                <h3>accordion heading 01</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 1
+            </p>
+        </div>
+
+        <div class="accordion" data-category="animal-rescue">
+            <div class="accordion-heading">
+                <h3>accordion heading 02</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 1
+            </p>
+        </div>
+
+        <div class="accordion" data-category="animal-rescue">
+            <div class="accordion-heading">
+                <h3>accordion heading 03</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 1
+            </p>
+        </div>
+
+        <div class="accordion" data-category="animal-rescue">
+            <div class="accordion-heading">
+                <h3>accordion heading 04</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 1
+            </p>
+        </div>
+
+        <div class="accordion" data-category="animal-rescue">
+            <div class="accordion-heading">
+                <h3>accordion heading 05</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 1
+            </p>
+        </div>
+
+        <div class="accordion active" data-category="animal-adoption">
+            <div class="accordion-heading">
+                <h3>accordion heading 01</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 2
+            </p>
+        </div>
+
+        <div class="accordion" data-category="animal-adoption">
+            <div class="accordion-heading">
+                <h3>accordion heading 02</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 2
+            </p>
+        </div>
+
+        <div class="accordion" data-category="animal-adoption">
+            <div class="accordion-heading">
+                <h3>accordion heading 03</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 2
+            </p>
+        </div>
+
+        <div class="accordion" data-category="animal-adoption">
+            <div class="accordion-heading">
+                <h3>accordion heading 04</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 2
+            </p>
+        </div>
+
+        <div class="accordion" data-category="animal-adoption">
+            <div class="accordion-heading">
+                <h3>accordion heading 05</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 2
+            </p>
+        </div>
+
+        <div class="accordion active" data-category="volunteering">
+            <div class="accordion-heading">
+                <h3>accordion heading 01</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 3
+            </p>
+        </div>
+
+        <div class="accordion" data-category="volunteering">
+            <div class="accordion-heading">
+                <h3>accordion heading 02</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 3
+            </p>
+        </div>
+
+        <div class="accordion" data-category="volunteering">
+            <div class="accordion-heading">
+                <h3>accordion heading 03</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 3
+            </p>
+        </div>
+
+        <div class="accordion" data-category="volunteering">
+            <div class="accordion-heading">
+                <h3>accordion heading 04</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 3
+            </p>
+        </div>
+
+        <div class="accordion" data-category="volunteering">
+            <div class="accordion-heading">
+                <h3>accordion heading 05</h3>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <p class="accordion-content">
+                for filter 3
+            </p>
+        </div>
+        
+
+    </div>
+
+</div>
+
+<div id="footer-container"></div>
+
+<script>
+    // Function to load and insert external HTML content
+
+    let accordions = document.querySelectorAll('.accordion-container .accordion');
+
+accordions.forEach(acco =>{
+    acco.onclick = () =>{
+        accordions.forEach(subAcco => { subAcco.classList.remove('active') });
+        acco.classList.add('active');
+    }
+})
+
+    function loadHTML(url, containerId) {
+        const container = document.getElementById(containerId);
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
+                container.innerHTML = html;
+            })
+            .catch(error => console.error(error));
+    }
+    
+    // Load and insert navigation and footer
+    loadHTML('nav.html', 'nav-container');
+    loadHTML('footer.html', 'footer-container');
+
+    document.addEventListener('DOMContentLoaded', () => {
+        let filterButtons = document.querySelectorAll('.filter-button');
+        let accordions = document.querySelectorAll('.accordion');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedCategory = button.getAttribute('data-filter');
+                filterAccordions(selectedCategory);
+            });
+        });
+
+        function filterAccordions(category) {
+            accordions.forEach(acco => {
+                const accoCategory = acco.getAttribute('data-category');
+                if (category === accoCategory) {
+                    acco.style.display = 'block';
+                } else {
+                    acco.style.display = 'none';
+                }
+            });
+        }
+
+        // Trigger a click event on the "Animal Rescue" filter button by default
+        const animalRescueButton = document.querySelector('.filter-button[data-filter="animal-rescue"]');
+        animalRescueButton.click();
+    });
+
+    </script>
+    
+</body>
+</html>
